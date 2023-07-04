@@ -9,9 +9,17 @@ const specialiteSchema=mongoose.Schema({
         required:true
     },
 })
+const specialiteSchemaMed=mongoose.Schema({
+    nom: { type: String, required: true },
+    taxe_plateforme: {
+        type: mongoose.Decimal128,
+        default: 0,
+        required:true
+    },
+})
 
 specialiteSchema.plugin(uniqueValidator);
 
 
 const Specialite=mongoose.model("Specialite",specialiteSchema)
-module.exports={Specialite,specialiteSchema};
+module.exports={Specialite,specialiteSchema,specialiteSchemaMed};
