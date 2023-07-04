@@ -1,1 +1,15 @@
-<p>edit-specialite works!</p>
+
+<form [formGroup]="updateSpecialite"   action="" method="post" novalidate>
+  <div class="mx-auto col-lg-4 bg-light shadow-lg rounded-3 p-4 rounded-sm m-5" >
+    <h3 class="text-uppercase text-center mb-3">Mis à jour d'une spécialité</h3>
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Nom</label>
+      <input type="text" formControlName="nom" class="form-control" id="formGroupExampleInput" placeholder="Chirurgie">
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput2" class="form-label">Taxe plateforme</label>
+      <input  type="number" formControlName="taxe_plateforme" class="form-control" id="formGroupExampleInput2" placeholder="550">
+    </div>
+    <button type="submit" (click)="onSubmit()"  [disabled]="updateSpecialite.invalid" class="btn btn-success col-12">Modifier</button>
+  </div>
+</form>

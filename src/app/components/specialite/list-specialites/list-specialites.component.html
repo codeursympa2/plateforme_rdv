@@ -33,11 +33,11 @@
         <td>
           <div class="row">
             <div class="col-md-5">
-                <div class="btn btn-primary mx-auto col-12">Editer</div>
+                <a routerLink="/specialite/edit/{{specialite._id}}" class="btn btn-sm btn-primary mx-auto col-12">Editer</a>
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-5">
-              <a  (click)="confirmDelete(specialite._id)" class="btn btn-danger mx-auto col-12">Supprimer</a>
+              <a  (click)="confirmDelete(specialite._id)" class="btn btn-sm btn-danger mx-auto col-12">Supprimer</a>
             </div>
           </div>
         </td>

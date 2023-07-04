@@ -19,4 +19,14 @@ export class SpecialitesService {
   delete(id:any){
     return this.http.delete(this.url+"specialite/"+id)
   }
+
+  getOne(id:any){
+    return this.http.get(this.url+"specialite/"+id)
+  }
+
+  update(id:any,data:any){
+    return this.http.put(this.url+"specialite/"+id,data)
+  }
+
+
 }

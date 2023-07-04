@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { SpecialitesService } from 'src/app/services/specialites.service';
 
 @Component({
   selector: 'app-edit-specialite',
@@ -7,4 +10,52 @@ import { Component } from '@angular/core';
 })
 export class EditSpecialiteComponent {
 
+  specialite?:any;
+  id?:String;
+  updateSpecialite:any;
+
+  constructor(
+    private specialiteServices:SpecialitesService,
+    private router:Router,
+    private route:ActivatedRoute,
+    private fb:FormBuilder,
+  ){
+    this.updateSpecialite=this.fb.group(
+      {
+        nom:['',Validators.required,],
+        taxe_plateforme:['',Validators.required]
+      }
+    )
+  }
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+      this.getOne(this.id);
+
+    });
+
+
+  }
+
+  async getOne(id:any){
+     await this.specialiteServices.getOne(id).subscribe(
+        (data:any)=>{
+          this.specialite=data;
+          this.updateSpecialite.patchValue({
+            nom: this.specialite.nom,
+            taxe_plateforme:this.specialite.taxe_plateforme.$numberDecimal
+          });
+        }
+      )
+  }
+
+  onSubmit(){
+      this.specialiteServices.update(this.id,this.updateSpecialite.value).subscribe(
+        (data:any)=>{
+          console.log(data);
+          this.router.navigate(['/specialite'])
+        }
+      )
+  }
 }

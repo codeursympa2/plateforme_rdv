@@ -12,7 +12,7 @@ import { HttpErrorResponse, HttpHeaderResponse, HttpResponse } from '@angular/co
 })
 export class AddSpecialiteComponent {
 
-  addStudent:any;
+  addSpecialite:any;
   message?:String;
   value:boolean=false;
   alert?:String;
@@ -23,7 +23,7 @@ export class AddSpecialiteComponent {
     private routes:Router,
     private specServices:SpecialitesService
   ){
-    this.addStudent=this.fb.group(
+    this.addSpecialite=this.fb.group(
       {
         nom:['',Validators.required],
         taxe_plateforme:['',Validators.required]
@@ -37,7 +37,7 @@ export class AddSpecialiteComponent {
 
   onSubmit():void{
       this.value=true;
-      this.specServices.add(this.addStudent.value).subscribe((data:any)=>{
+      this.specServices.add(this.addSpecialite.value).subscribe((data:any)=>{
         this.message=data.message
 
         if (data.value) {
@@ -59,6 +59,6 @@ export class AddSpecialiteComponent {
   }
 
   resetForm():void{
-    this.addStudent.reset()
+    this.addSpecialite.reset()
   }
 }
