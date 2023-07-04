@@ -11,4 +11,8 @@ export class SpecialitesService {
   add(specialite:any){
       return this.http.post(this.url+"specialite",specialite);
   }
+
+  get(){
+    return this.http.get(this.url+"specialite")
+  }
 }
