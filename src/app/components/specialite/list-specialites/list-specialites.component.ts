@@ -31,4 +31,15 @@ export class ListSpecialitesComponent {
       }
     )
   }
+
+  confirmDelete(specialite:any){
+    if (window.confirm("Voulez vous vraiment supprimer cette spécialité ?")) {
+      this.specialisationServices.delete(specialite).subscribe(
+        (data:any)=>{
+            console.log(data);
+            this.loadSpecialites()
+        }
+        )
+    }
+  }
 }

@@ -15,4 +15,8 @@ export class SpecialitesService {
   get(){
     return this.http.get(this.url+"specialite")
   }
+
+  delete(id:any){
+    return this.http.delete(this.url+"specialite/"+id)
+  }
 }
