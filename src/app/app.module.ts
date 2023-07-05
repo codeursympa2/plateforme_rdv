@@ -10,6 +10,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SpecialiteComponent } from './components/specialite/specialite.component';
 import { ListSpecialitesComponent } from './components/specialite/list-specialites/list-specialites.component';
+import { LocalisationComponent } from './components/localisation/localisation.component';
+import { AddLocalisationComponent } from './components/localisation/add-localisation/add-localisation.component';
+import { EditLocalisationComponent } from './components/localisation/edit-localisation/edit-localisation.component';
+import { ListLocalisationComponent } from './components/localisation/list-localisation/list-localisation.component';
 
 
 @NgModule({
@@ -19,6 +23,10 @@ import { ListSpecialitesComponent } from './components/specialite/list-specialit
     AddSpecialiteComponent,
     SpecialiteComponent,
     ListSpecialitesComponent,
+    LocalisationComponent,
+    AddLocalisationComponent,
+    EditLocalisationComponent,
+    ListLocalisationComponent,
 
   ],
   imports: [

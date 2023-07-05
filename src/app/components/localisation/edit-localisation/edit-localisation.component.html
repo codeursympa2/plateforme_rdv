@@ -1,0 +1,20 @@
+
+<form [formGroup]="localisationForm"   action="" method="post" novalidate>
+  <div class="mx-auto col-lg-4 bg-light shadow-lg rounded-3 p-4 rounded-sm m-5" >
+    <h3 class="text-uppercase text-center mb-3">Mis à jour d'une localisation</h3>
+    <div *ngIf="value" class="alert {{alert}} mt-2 mb-2 text-center"><strong>{{message}}</strong></div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Pays</label>
+      <input type="text" formControlName="pays" class="form-control" id="formGroupExampleInput" placeholder="Sénégal">
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput2" class="form-label">Ville</label>
+      <input type="text" formControlName="ville" class="form-control" id="formGroupExampleInput2" placeholder="Dakar">
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput3" class="form-label">Departement</label>
+      <input type="text" formControlName="departement" class="form-control" id="formGroupExampleInput3" placeholder="Mbour">
+    </div>
+    <button type="submit" (click)="onSubmit()"  [disabled]="localisationForm.invalid" class="btn btn-success col-12">Modifier</button>
+  </div>
+</form>

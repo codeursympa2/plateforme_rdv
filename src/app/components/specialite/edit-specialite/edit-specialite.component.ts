@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SpecialitesService } from 'src/app/services/specialites.service';
+import { HttpErrorResponse,} from '@angular/common/http';
+
 
 @Component({
   selector: 'app-edit-specialite',
@@ -13,6 +15,10 @@ export class EditSpecialiteComponent {
   specialite?:any;
   id?:String;
   updateSpecialite:any;
+
+  value:boolean=false;
+  alert?:String;
+  message?:String;
 
   constructor(
     private specialiteServices:SpecialitesService,
@@ -55,7 +61,16 @@ export class EditSpecialiteComponent {
         (data:any)=>{
           console.log(data);
           this.router.navigate(['/specialite'])
-        }
+        },
+        (error: HttpErrorResponse) => {
+          if (error.status === 400) {
+            this.value=true;
+            this.alert="alert-danger"
+            this.message=error.error.message;
+          }else {
+            console.error('An error occurred:', error.error);
+          }
+        },
       )
   }
 }

@@ -1,0 +1,65 @@
+<div class="container mt-5">
+  <div class="row mb-3">
+    <div class="col">
+    </div>
+    <div class="col">
+      <div class="d-flex justify-content-end">
+        <div class="ms-auto">
+            <a routerLink="/localisation/new" class="btn btn-primary text-uppercase"><strong>+</strong>&nbsp;Ajouter</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 class=" text-uppercase mx-auto p-3 col-md-5 text-center bg-success rounded-2 text-white">
+    Liste des localisations
+  </h3>
+ <div *ngIf="localisations.length >= 1" class="">
+  <table class="table  table-hover">
+    <thead class="bg-success text-white">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col" class="text-uppercase">pays</th>
+        <th scope="col" class="text-uppercase">ville</th>
+        <th scope="col" class="text-uppercase">departement</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let localisation of localisations">
+        <th scope="row">{{localisation._id}}</th>
+        <td>{{localisation.pays}}</td>
+        <td>{{localisation.ville}}</td>
+        <td>{{localisation.departement}}</td>
+        <td>
+          <div class="row">
+            <div class="col-md-5">
+                <a routerLink="/localisation/edit/{{localisation._id}}" class="btn btn-sm  btn-primary mx-auto col-12">Editer</a>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5">
+              <a  (click)="confirmDelete(localisation._id)" class="btn btn-sm btn-danger mx-auto">Supprimer</a>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row">
+    <div class="col">
+      <!-- Your content here -->
+    </div>
+    <div class="col">
+      <div class="d-flex justify-content-end">
+        <div class="ms-auto text-body">
+          Total: <strong>{{localisations.length}}</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+
+ <div *ngIf="localisations.length < 1 " class="mt-5">
+    <h3 class="alert alert-warning text-center p-2"><strong class="">Oups! pas de localisations </strong></h3>
+ </div>
+
+</div>

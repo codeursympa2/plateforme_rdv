@@ -4,6 +4,10 @@ import { AddSpecialiteComponent } from './components/specialite/add-specialite/a
 import { EditSpecialiteComponent } from './components/specialite/edit-specialite/edit-specialite.component';
 import { SpecialiteComponent } from './components/specialite/specialite.component';
 import { ListSpecialitesComponent } from './components/specialite/list-specialites/list-specialites.component';
+import { LocalisationComponent } from './components/localisation/localisation.component';
+import { ListLocalisationComponent } from './components/localisation/list-localisation/list-localisation.component';
+import { AddLocalisationComponent } from './components/localisation/add-localisation/add-localisation.component';
+import { EditLocalisationComponent } from './components/localisation/edit-localisation/edit-localisation.component';
 
 const routes: Routes = [
   {
@@ -21,6 +25,24 @@ const routes: Routes = [
         {
           path:'edit/:id',
           component:EditSpecialiteComponent,
+        }
+      ]
+  },
+  {
+    path:'localisation',
+    component:LocalisationComponent,
+    children:[
+        {
+          path:'',
+          component:ListLocalisationComponent,
+        },
+        {
+          path:'new',
+          component:AddLocalisationComponent,
+        },
+        {
+          path:'edit/:id',
+          component:EditLocalisationComponent,
         }
       ]
   },
