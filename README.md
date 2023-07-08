@@ -1,10 +1,11 @@
-#NB:
+# NB:
 Pour la partie front-end seulement seulement les localisation et  specialités ont été developpés CRUD complet. Par manque de temps nous n'avons pas pu terminer.
 
-###Port 4200
+### Port 4200
 
 [http://localhost:4200/localisation] ----> Pour la localisation
 [http://localhost:4200/spécialisation] ----> Pour la spécialisation
+
 # PlateformeRdv
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
