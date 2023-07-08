@@ -1,0 +1,133 @@
+{"medecin | route[/api/medecin]":    {
+        "nom": "ZEZO",
+        "prenom": "Abdallah",
+         "date_naissance": "06/08/2012",
+         "genre": "Masculin",
+         "telephone":"768688667",
+          "localisation": {
+                 "_id":  "64a00d3801cf87d79ce525f8"
+                 ,
+                 "pays": "Senegal",
+                 "ville": "Dakar",
+                 "departement": "Thies",
+                 "__v": 0
+                 },
+         "specialite": {
+                 "_id":  "649f9c85e0f888d5e59cbd21",
+                 "nom": "ORL",
+                 "taxe_plateforme":  123.000,
+                 "__v": 0
+                 },
+         "tarif_service":100000
+     
+     },
+
+     "enregistrement patient à l'ouverture du compte | route[/api/signup]":{
+        "email": "aawole@gmail.com",
+        "password": "passer",
+        "nom": "Awole",
+        "prenom": "Zegreba",
+        "date_naissance": "06/08/2012",
+        "genre": "Masculin",
+        "telephone":"768688667",
+        "nationalite":"Comorienne",
+        "localisation":{
+            "_id":  "64a00d3801cf87d79ce525f8"
+            ,
+            "pays": "Senegal",
+            "ville": "Dakar",
+            "departement": "Thies",
+            "__v": 0
+            },
+        "groupe_sanguin":"O+",
+        "role":"user",
+        "last_connection":"01/01/19",
+        "online":false,
+        "status":true
+       
+      },
+      "Mis à jour compte patient avec changement de mot de passe ":{
+        "email": "aawole@gmail.com",
+        "password": "popo",
+        "new_password":"passer",
+        "nom": "Awole",
+        "prenom": "Zegreba",
+        "date_naissance": "06/08/2012",
+        "genre": "Masculin",
+        "telephone":"768688667",
+        "nationalite":"Comorienne",
+        "localisation":{
+            "_id":  "64a00d3801cf87d79ce525f8"
+            ,
+            "pays": "Senegal",
+            "ville": "Dakar",
+            "departement": "Thies",
+            "__v": 0
+            },
+        "groupe_sanguin":"O+",
+        "role":"user",
+        "last_connection":"01/01/19",
+        "online":false,
+        "status":true
+       
+      },
+
+
+
+
+
+     "Rendez-vous":{
+    "etat": "reservation",
+    "medecin": {
+            "_id":  "64a033c2a7401a4f1f7e33e7",
+            "tarif_service":  "100000",
+            "specialite": {
+            "nom": "ORL",
+            "taxe_plateforme": 123,
+            "_id":  "649f9c85e0f888d5e59cbd21",
+            "__v": 0
+            },
+            "nom": "ZEZO",
+            "prenom": "Abdallah",
+            "date_naissance":  "2012-06-08T00:00:00.000Z",
+            "genre": "Masculin",
+            "telephone": 768688667,
+            "localisation": {
+            "pays": "Senegal",
+            "ville": "Dakar",
+            "departement": "Thies",
+            "_id":  "64a00d3801cf87d79ce525f8",
+            "__v": 0
+            },
+            "__v": 0
+      },
+    "patient":{
+        "_id":  "64a14920390a07148663cbd4",
+        "nationalite": "Comorienne",
+        "groupe_sanguin": "O+",
+        "role": "user",
+        "nom": "Albert",
+        "prenom": "Zegreba",
+        "date_naissance": "2012-06-08T00:00:00.000Z",
+        "genre": "Masculin",
+        "telephone": 768688667,
+        "localisation": {
+          "pays": "Senegal",
+          "ville": "Dakar",
+          "departement": "Thies",
+          "_id": "64a00d3801cf87d79ce525f8",
+          "__v": 0
+        },
+        
+        "__v": 0
+      },
+    "evaluation":{
+        "_id":  "64a003ad155fbdf2b0337e98",
+        "message": "Service impeccable",
+        "rating": 5,
+        "created_at": "2023-07-01T10:45:01.991Z",
+        "updated_at":  "2023-07-01T10:45:01.991Z",
+        "__v": 0
+      }
+     }  
+}
