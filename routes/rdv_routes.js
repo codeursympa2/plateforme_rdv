@@ -2,12 +2,13 @@ const express = require('express');
 const router = express.Router();
 
 const ctrl = require('../controllers/rdv_controller');
+const auth = require('../middleware/auth');
 
-router.get('/', ctrl.getAll);
-router.post('/', ctrl.create);
-router.get('/:id', ctrl.getOne);
-router.put('/:id', ctrl.modify);
-router.delete('/:id',ctrl.delete);
+router.get('/',auth, ctrl.getAll);
+router.post('/',auth, ctrl.create);
+router.get('/:id',auth, ctrl.getOne);
+router.put('/:id',auth, ctrl.modify);
+router.delete('/:id',auth,ctrl.delete);
 
 
 module.exports = router;

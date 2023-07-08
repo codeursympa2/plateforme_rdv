@@ -10,7 +10,9 @@ exports.create=async (req,res,next)=>{
     .then(
       (obj)=> res.status(201).json({
         "message":"Localisation créée !",
-        "objet":obj
+        "objet":obj,
+        "value":true,
+        
       })
     )
     .catch(

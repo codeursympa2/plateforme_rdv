@@ -1,21 +1,27 @@
 const {Specialite }= require('../models/specialite_model');
 
 exports.create=(req,res,next)=>{
-   
+     
     const specialite=new Specialite({
       ...req.body,
     });
-  
-    specialite.specialiteObject.save()
+   
+    specialite.save()
     .then(
       (obj)=> res.status(201).json({
         "message":"Specialite créée !",
+        "value":true,
         "objet":obj
       })
     )
     .catch(
-      error => res.status(400).json(error)
-    )}
+      error => res.status(400).json({
+        "message":"Cette spécialité existe dejà.",
+        "value":false
+      })
+    )
+      
+  }
   
 exports.getOne=(req,res,next) => {
     Specialite.findOne({_id:req.params.id})
@@ -33,7 +39,7 @@ exports.modify=(req,res,next) => {
                 "message":"Objet modifié !",
                 "Specialite":specObject
             }))
-            .catch( error => res.status(400).json({"error :":error}))
+            .catch( (error) => res.status(400).json({"message":"Cette spécialité existe dejà."}))
         })
         .catch((error) => {
             res.status(400).json({ "message":"Cette spécialité n'existe pas."});
@@ -49,10 +55,8 @@ exports.delete=(req,res,next)=>{
 exports.getAll=(req,res,next)=>{
   Specialite.find()
   .then(objects=> res.status(200).json(objects))
-  
   .catch(
     error => res.status(400).json(error)
   )
-
-   
+  
 }
